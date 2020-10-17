@@ -150,7 +150,7 @@ module RailsSettings
 
         _all_settings[var_name.to_s]
       rescue => e
-        if e.message.include?("connect")
+        if e.to_s.include?("connect")
           puts "WARNING: `#{name}.#{var_name}` called but no connection, fallback to returns the default value."
           return nil
         end
